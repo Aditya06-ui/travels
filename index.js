@@ -25,6 +25,11 @@ app.use("/travel", travelrouter)
 
 db()
 
+
+app.get("/",(req,res) => {
+    res.send("okay done")
+})
+
 app.listen(process.env.port, () => {
     console.log("listening to the port")
 })
