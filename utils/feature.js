@@ -2,7 +2,7 @@ const jwt = require("jsonwebtoken")
 
 const sendcookie = (userss,res,message) => {
 
-    const token = jwt.sign({_id: userss._id},"tyghbbhbhjhgbhjbh")
+    const token = jwt.sign({_id: userss._id},process.env.jwt_secret_key)
 
     res.cookie("token", token,{
         maxAge: 15 * 60 * 1000,

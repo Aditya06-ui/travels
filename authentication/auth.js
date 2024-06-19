@@ -13,7 +13,7 @@ const isauthenticated = async(req,res,next) => {
         })
     }
 
-    const decoded = jwt.verify(token, "tyghbbhbhjhgbhjbh")
+    const decoded = jwt.verify(token, process.env.jwt_secret_key)
 
     req.user = await traveluser.findById({_id:decoded._id})
     
