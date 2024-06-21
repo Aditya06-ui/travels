@@ -34,6 +34,15 @@ const login = async (req,res) => {
 
     const user = await traveluser.findOne({email})
 
+    if(!user){
+        res.json({
+            success: false,
+            message: "wrong gmail or password"
+        })
+    }
+
+    console.log(user)
+
     const checkedpassword = await bcrypt.compare(password,user.password) 
 
     
