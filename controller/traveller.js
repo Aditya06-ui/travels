@@ -48,8 +48,6 @@ try{
   } 
  }
 
- 
-
 const booked_trip = async(req,res) => {
 
     const  ticket = await traveldetail.findOne({user_id : req.user._id})
@@ -166,56 +164,6 @@ const canceltrip = async(req,res) => {
     })
 }
 }
-
-
-// const canceltrip = async (req, res) => {
-//     const { destination, name } = req.body;
-//     const { user_id } = req.body; // Assuming user_id is passed in the request body
-  
-//     console.log("Destination:", destination);
-//     console.log("Name:", name);
-//     console.log("User ID:", user_id);
-  
-//     try {
-//       // Log the exact query being made
-//       console.log("Querying with:", { destination: destination, name: name, user_id: user_id });
-  
-//       // Query the database
-//       const traveller = await traveldetail.findOne({ destination: destination, name: name, user_id: user_id });
-  
-//       // Log the result of the query
-//       console.log("Traveller found:", traveller);
-  
-//       // Check if traveller is null
-//       if (!traveller) {
-//         return res.status(404).json({
-//           success: false,
-//           message: "No plan found",
-//         });
-//       }
-  
-//       // Delete the traveller
-//       await traveller.deleteOne();
-  
-//       // Send a success response
-//       return res.status(200).json({
-//         success: true,
-//         message: "Trip cancelled successfully",
-//       });
-  
-//     } catch (err) {
-//       // Log the error
-//       console.error("Error finding or deleting traveller:", err);
-  
-//       // Send an error response
-//       return res.status(500).json({
-//         success: false,
-//         message: "An error occurred: " + err.message,
-//       });
-//     }
-//   };
-  
-  
   
   
 module.exports = {
