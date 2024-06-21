@@ -41,7 +41,7 @@ const login = async (req,res) => {
         })
     }
 
-    console.log(user)
+    
 
     const checkedpassword = await bcrypt.compare(password,user.password) 
 
