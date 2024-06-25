@@ -17,9 +17,9 @@ const register = async (req,res) => {
      })
 
      
-     if(!user) return res.json({
+     if(!user) return res.status(401).json({
         success: false,
-        message: "child is created"
+        message: "child is not created"
      })
 
      res.status(200).json({
