@@ -5,8 +5,13 @@ const userrouter = require("./routes/user.js")
 const cookieparser = require("cookie-parser")
 const travelrouter = require("./routes/traveler.js")
 const {config} = require("dotenv")
-
 const cors = require("cors")
+
+app.use((req, res, next) => {
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+    next();
+  });
 
 app.use(cookieparser())
 app.use(express.json())
